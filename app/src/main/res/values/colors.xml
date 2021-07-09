@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="login">#2690E8</color>
     <color name="signup">#E637CF58</color>
+    <color name="grey">#615E5F</color>
 </resources>
