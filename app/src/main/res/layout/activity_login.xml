@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="208dp"
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/ic_launcher_logo_home_foreground" />
 
     <EditText
         android:id="@+id/etUsername"
@@ -26,13 +35,27 @@
         android:inputType="textPassword"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:layout_marginTop="45dp"
+        android:background="@color/login"
+        android:textColor="@android:color/white"
+        android:text="Login" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:text="Signup"
+        android:background="@color/signup"
+        android:textColor="@android:color/white"
+
+        />
 
 
 </LinearLayout>

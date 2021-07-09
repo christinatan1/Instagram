@@ -59,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                 // if e is null, login succeeded
                 if (e != null){
                     Log.e(TAG, "Issue with login", e);
+                    Toast.makeText(LoginActivity.this, "Invalid Login Credentials", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

@@ -53,6 +53,7 @@ public class ComposeFragment extends Fragment {
     private ImageView ivPostImage;
     private Button btnSubmit;
     private File photoFile;
+    private Button logoutBtn;
     public String photoFileName = "photo.jpg";
     public static final String TAG = "ComposeFragment";
 
@@ -113,6 +114,7 @@ public class ComposeFragment extends Fragment {
         btnCaptureImage = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
+        logoutBtn = view.findViewById(R.id.logoutBtn);
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +138,16 @@ public class ComposeFragment extends Fragment {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
+            }
+        });
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.logOut();
+
+                Intent i = new Intent(getContext(), LoginActivity.class);
+                startActivity(i);
             }
         });
 
@@ -243,12 +255,12 @@ public class ComposeFragment extends Fragment {
         });
     }
 
-    public void onLogoutButton(View view){
-        ParseUser.logOut();
-
-        Intent i = new Intent(getContext(), LoginActivity.class);
-        startActivity(i);
-    }
+//    public void onLogoutButton(View view){
+//        ParseUser.logOut();
+//
+//        Intent i = new Intent(getContext(), LoginActivity.class);
+//        startActivity(i);
+//    }
 
     public void onSubmitBtn(View view){
         Intent i = new Intent(getContext(), LoginActivity.class);
